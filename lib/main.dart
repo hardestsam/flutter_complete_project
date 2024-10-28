@@ -5,6 +5,11 @@ import 'core/routing/app_router.dart';
 
 void main() {
   runApp(DocApp(
+<<<<<<< Updated upstream
+=======
+
+    
+>>>>>>> Stashed changes
     appRouter: AppRouter(),
   ));
 }
