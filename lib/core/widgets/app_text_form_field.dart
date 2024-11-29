@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_project/core/theming/colors.dart';
+import 'package:flutter_complete_project/core/theming/styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextFormField extends StatelessWidget {
@@ -11,6 +13,8 @@ class AppTextFormField extends StatelessWidget {
   final bool? isObscureText;
   final Widget? suffixIcon;
   final Color? backgroundColor;
+  final TextEditingController? controller;
+  final Function(String?) validator;
   const AppTextFormField({
     super.key,
     this.contentPadding,
@@ -22,24 +26,47 @@ class AppTextFormField extends StatelessWidget {
     this.isObscureText,
     this.suffixIcon,
     this.backgroundColor,
+    this.controller,
+    required this.validator,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       decoration: InputDecoration(
         isDense: true,
-          borderSide: const BorderSide(
-             color: ColorsManager.mainBlue,
-             width: 1.3,
-           ),
-           borderRadius: BorderRadius.circular(16.0),
-        ),
-            borderSide: const BorderSide(
-              color: ColorsManager.lighterGray,
-              width: 1.3,
+        contentPadding: contentPadding ??
+            EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
+        focusedBorder: focusedBorder ??
+            OutlineInputBorder(
+              borderSide: const BorderSide(
+                color: ColorsManager.mainBlue,
+                width: 1.3,
+              ),
+              borderRadius: BorderRadius.circular(16.0),
             ),
-            borderRadius: BorderRadius.circular(16.0),
+        enabledBorder: enabledBorder ??
+            OutlineInputBorder(
+              borderSide: const BorderSide(
+                color: ColorsManager.lighterGray,
+                width: 1.3,
+              ),
+              borderRadius: BorderRadius.circular(16.0),
+            ),
+        errorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: Colors.red,
+            width: 1.3,
+          ),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: Colors.red,
+            width: 1.3,
+          ),
+          borderRadius: BorderRadius.circular(16.0),
         ),
         hintStyle: hintStyle ?? TextStyles.font14LightGrayRegular,
         hintText: hintText,
@@ -49,6 +76,9 @@ class AppTextFormField extends StatelessWidget {
       ),
       obscureText: isObscureText ?? false,
       style: TextStyles.font14DarkBlueMedium,
+      validator: (value) {
+        return validator(value);
+      },
     );
   }
 }
