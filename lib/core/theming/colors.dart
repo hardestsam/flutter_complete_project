@@ -1,9 +1,6 @@
-import 'package:flutter/material.dart';
-
-
-class ColorsManager{
-
-  static const Color mainBlue = Color(0xFF247CFF);
-  static const Color gray = Color(0xFFE5E5E5);
-
+class Routes {
+  static const String onBoardingScreen = '/onBoardingScreen';
+  static const String loginScreen = '/loginScreen';
+  static const String signUpScreen = '/signUpScreen';
+  static const String homeScreen = '/homeScreen';
 }
