@@ -1,12 +1,22 @@
+import 'package:flutter_complete_project/core/networking/api_error_handler.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'sign_up_state.freezed.dart';
+import '../data/models/specializations_response_model.dart';
+
+part 'home_state.freezed.dart';
 
 @freezed
-class SignupState<T> with _$SignupState<T> {
-  const factory SignupState.initial() = _Initial;
+class HomeState with _$HomeState {
+  const factory HomeState.initial() = _Initial;
 
-  const factory SignupState.signupLoading() = SignupLoading;
-  const factory SignupState.signupSuccess(T data) = SignupSuccess<T>;
-  const factory SignupState.signupError({required String error}) = SignupError;
+  // Specializations
+  const factory HomeState.specializationsLoading() = SpecializationsLoading;
+  const factory HomeState.specializationsSuccess(List<SpecializationsData?>? specializationDataList) = SpecializationsSuccess;
+  const factory HomeState.specializationsError(ErrorHandler errorHandler) =
+  SpecializationsError;
+
+  // Doctors
+  const factory HomeState.doctorsSuccess(List<Doctors?>? doctorsList) = DoctorsSuccess;
+  const factory HomeState.doctorsError(ErrorHandler errorHandler) =
+  DoctorsError;
 }
