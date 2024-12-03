@@ -14,12 +14,13 @@ class DoctorImageAndText extends StatelessWidget {
         Container(
           foregroundDecoration: BoxDecoration(
             gradient: LinearGradient(
-                colors: [
-                  Colors.white.withOpacity(0.0),
-                ],
+              colors: [
+                Colors.white,
+                Colors.white.withOpacity(0.0),
+              ],
               begin: Alignment.bottomCenter,
               end: Alignment.topCenter,
-              stops: const [0.14,0.4],
+              stops: const [0.14, 0.4],
             ),
           ),
           child: Image.asset('assets/images/onboarding_doctor.png'),
@@ -36,9 +37,7 @@ class DoctorImageAndText extends StatelessWidget {
             ),
           ),
         ),
-
-      ]
-
+      ],
     );
   }
 }
