@@ -1,4 +1,5 @@
 
+
 default_platform(:android)
 
 platform :android do
@@ -8,9 +9,9 @@ platform :android do
       sh "flutter build apk --release --flavor production --target lib/main_production.dart --no-tree-shake-icons"
       firebase_app_distribution(
           app: "1:63422403363:android:daca08bce9fba416fc3296",
-          firebase_cli_token:"1//03QEWdISxUGCRCgYIARAAGAMSNwF-L9Ir_-tTwgBzqaVZtXd9L99KLvHM1TXaQgmDfTeTZfgytjdVIz2UJ2Hr9Sf2Bqmz5YfVtYY",
+          firebase_cli_token:"1//03sqjPy3Cl6U4CgYIARAAGAMSNwF-L9IrF1B9UOgAv-61zbw6K3XupFMoSvQjCeq3Si9JAxhDLBtVDzC9V1nkOl8xxIb-sc-JgmI",
           android_artifact_type:"APK",
-          android_artifact_path:"../app/outputs/flutter-apk/app-production-release.apk",
+          android_artifact_path:"../build/app/outputs/flutter-apk/app-production-release.apk",
           testers: "s.sanabani@gmail.com",
           release_notes:"First Fastlane Firebase Distribution YouTube Video!"
         )
