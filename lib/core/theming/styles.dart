@@ -124,6 +124,7 @@ class TextStyles {
     color: ColorsManager.darkBlue,
   );
 
+
   static TextStyle font18DarkBlueBold = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeightHelper.bold,
