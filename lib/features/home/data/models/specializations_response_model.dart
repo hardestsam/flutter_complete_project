@@ -2,6 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'specializations_response_model.g.dart';
 
+
 @JsonSerializable()
 class SpecializationsResponseModel {
   @JsonKey(name: 'data')
