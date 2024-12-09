@@ -7,6 +7,7 @@ import 'package:flutter_complete_project/features/login/data/models/login_reques
 import 'package:flutter_complete_project/features/login/data/repos/login_repo.dart';
 import 'package:flutter_complete_project/features/login/logic/cubit/login_state.dart';
 
+
 class LoginCubit extends Cubit<LoginState> {
   final LoginRepo _loginRepo;
   LoginCubit(this._loginRepo) : super(const LoginState.initial());
