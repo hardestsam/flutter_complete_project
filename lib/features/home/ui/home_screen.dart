@@ -28,6 +28,13 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const HomeTopBar(),
+              const DoctorsBlueContainer(),
+              verticalSpace(24),
+              const DoctorsSpecialitySeeAll(),
+              verticalSpace(18),
+              const SpecializationsBlocBuilder(),
+              verticalSpace(8),
+              const DoctorsBlocBuilder(),
               
             ],
           ),
