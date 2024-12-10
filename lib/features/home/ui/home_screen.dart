@@ -35,6 +35,7 @@ class HomeScreen extends StatelessWidget {
               const SpecializationsBlocBuilder(),
               verticalSpace(8),
               const DoctorsBlocBuilder(),
+              
             ],
           ),
         ),

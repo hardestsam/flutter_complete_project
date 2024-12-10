@@ -8,6 +8,7 @@ import '../../../../../core/theming/colors.dart';
 import '../../../../../core/theming/styles.dart';
 import '../../../data/models/specializations_response_model.dart';
 
+
 class DoctorsListViewItem extends StatelessWidget {
   final Doctors? doctorsModel;
   const DoctorsListViewItem({super.key, this.doctorsModel});
