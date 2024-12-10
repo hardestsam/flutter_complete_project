@@ -8,6 +8,7 @@ import '../doctors_list/doctors_shimmer_loading.dart';
 import 'speciality_list_view.dart';
 import 'speciality_shimmer_loading.dart';
 
+
 class SpecializationsBlocBuilder extends StatelessWidget {
   const SpecializationsBlocBuilder({super.key});
 

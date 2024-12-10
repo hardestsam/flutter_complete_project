@@ -7,6 +7,7 @@ import 'package:flutter_complete_project/features/login/data/models/login_reques
 import 'package:flutter_complete_project/features/login/data/repos/login_repo.dart';
 import 'package:flutter_complete_project/features/login/logic/cubit/login_state.dart';
 
+
 class LoginCubit extends Cubit<LoginState> {
   final LoginRepo _loginRepo;
   LoginCubit(this._loginRepo) : super(const LoginState.initial());
@@ -16,7 +17,7 @@ class LoginCubit extends Cubit<LoginState> {
   final formKey = GlobalKey<FormState>();
 
   void emitLoginStates() async {
-    emit(const LoginState.loading());
+    emit(const LoginState.loginLoading());
     final response = await _loginRepo.login(
       LoginRequestBody(
         email: emailController.text,
@@ -25,9 +26,9 @@ class LoginCubit extends Cubit<LoginState> {
     );
     response.when(success: (loginResponse) async {
       await saveUserToken(loginResponse.userData?.token ?? '');
-      emit(LoginState.success(loginResponse));
-    }, failure: (error) {
-      emit(LoginState.error(error: error.apiErrorModel.message ?? ''));
+      emit(LoginState.loginSuccess(loginResponse));
+    }, failure: (apiErrorModel) {
+      emit(LoginState.loginError(apiErrorModel));
     });
   }
 

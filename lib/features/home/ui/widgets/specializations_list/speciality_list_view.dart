@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../data/models/specializations_response_model.dart';
 import 'speciality_list_view_item.dart';
 
+
 class SpecialityListView extends StatefulWidget {
   final List<SpecializationsData?> specializationDataList;
   const SpecialityListView(

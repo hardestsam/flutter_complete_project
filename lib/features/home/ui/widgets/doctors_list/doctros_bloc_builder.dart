@@ -5,6 +5,7 @@ import '../../../logic/home_cubit.dart';
 import '../../../logic/home_state.dart';
 import 'doctors_list_view.dart';
 
+
 class DoctorsBlocBuilder extends StatelessWidget {
   const DoctorsBlocBuilder({super.key});
 
@@ -18,7 +19,7 @@ class DoctorsBlocBuilder extends StatelessWidget {
           doctorsSuccess: (doctorsList) {
             return setupSuccess(doctorsList);
           },
-          doctorsError: (errorHandler) => setupError(),
+          doctorsError: () => setupError(),
           orElse: () {
             return const SizedBox.shrink();
           },
