@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_complete_project/core/helpers/extensions.dart';
-import 'package:flutter_complete_project/core/networking/api_error_model.dart';
 import '../data/models/specializations_response_model.dart';
 import '../data/repos/home_repo.dart';
 import 'home_state.dart';
